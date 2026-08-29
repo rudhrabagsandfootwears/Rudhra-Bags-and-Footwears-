@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rudhra Bags & Footwears | Footwear Repair & Service Booking</title>
+<meta name="description" content="Rudhra Bags & Footwears — footwear repair, bag repair, remodeling, pickup and delivery in Tekkali.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brandmark">R</span><div><strong>Rudhra</strong><small>Bags & Footwears</small></div></div>
+  <a class="call" href="tel:9059087311">☎ 9059087311</a>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">FOOTWEAR SPECIALISTS</span>
+    <h1>Repair. Restore. <em>Wear Again.</em></h1>
+    <p>All kinds of footwear repair, restoration and remodeling — with convenient service booking and pickup & delivery.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn primary">Book a Service</a>
+      <a href="tel:9059087311" class="btn ghost">Call Now</a>
+    </div>
+    <div class="trust"><span>✓ Prepaid booking</span><span>✓ Pickup & delivery</span><span>✓ Quality repair</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="shoe">👟</div>
+    <h3>Footwear Services</h3>
+    <p>Soles • Stitching • Pasting • Leather • Cleaning • Polishing • Remodeling</p>
+    <a href="#services">Explore services →</a>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-head"><span class="eyebrow">OUR SERVICES</span><h2>Footwear comes first.</h2><p>Choose the service your footwear needs. If you're unsure, upload a photo and we'll review it.</p></div>
+  <div class="grid">
+    <article class="service featured"><div>👞</div><h3>Footwear Repair</h3><p>General repairs for all kinds of footwear.</p><button onclick="selectService('Footwear Repair')">Book</button></article>
+    <article class="service"><div>🦶</div><h3>Sole Replacement</h3><p>Replace worn-out soles and improve grip.</p><button onclick="selectService('Sole Replacement')">Book</button></article>
+    <article class="service"><div>🧵</div><h3>Stitching & Pasting</h3><p>Fix open seams, straps, uppers and joins.</p><button onclick="selectService('Stitching & Pasting')">Book</button></article>
+    <article class="service"><div>✨</div><h3>Cleaning & Polishing</h3><p>Restore the look of suitable footwear.</p><button onclick="selectService('Cleaning & Polishing')">Book</button></article>
+    <article class="service"><div>🧴</div><h3>Leather Repair</h3><p>Repair and restore leather footwear.</p><button onclick="selectService('Leather Repair')">Book</button></article>
+    <article class="service"><div>🔧</div><h3>Footwear Remodeling</h3><p>Remodel and refresh selected footwear.</p><button onclick="selectService('Footwear Remodeling')">Book</button></article>
+    <article class="service"><div>🎒</div><h3>Bag Repair</h3><p>School, office, travel and everyday bags.</p><button onclick="selectService('Bag Repair')">Book</button></article>
+    <article class="service"><div>👜</div><h3>Bag Remodeling</h3><p>Repair, refresh and remodel suitable bags.</p><button onclick="selectService('Bag Remodeling')">Book</button></article>
+  </div>
+</section>
+
+<section class="process">
+ <div><span class="eyebrow">HOW IT WORKS</span><h2>Simple from booking to delivery.</h2></div>
+ <div class="steps"><div><b>01</b><h3>Book</h3><p>Select a service and share your details.</p></div><div><b>02</b><h3>Upload</h3><p>Add photos so we can understand the job.</p></div><div><b>03</b><h3>Pay</h3><p>Complete prepaid payment to confirm.</p></div><div><b>04</b><h3>Repair & Deliver</h3><p>We process the service and arrange delivery.</p></div></div>
+</section>
+
+<section id="booking" class="section booking">
+ <div class="section-head"><span class="eyebrow">SERVICE BOOKING</span><h2>Book your repair.</h2><p>Fill in the form. Final service pricing can be confirmed after inspection.</p></div>
+ <form id="bookingForm" class="form">
+  <div class="row">
+   <label>Full Name<input required name="name" placeholder="Your name"></label>
+   <label>Mobile Number<input required name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile"></label>
+  </div>
+  <div class="row">
+   <label>Service<select required name="service" id="service"><option value="">Choose a service</option><option>Footwear Repair</option><option>Sole Replacement</option><option>Stitching & Pasting</option><option>Cleaning & Polishing</option><option>Leather Repair</option><option>Footwear Remodeling</option><option>Bag Repair</option><option>Bag Remodeling</option></select></label>
+   <label>Pickup / Delivery<select required name="mode"><option value="">Choose option</option><option>Pickup & Delivery</option><option>Drop at shop & Delivery</option><option>Drop & Collect</option></select></label>
+  </div>
+  <label>Pickup / Delivery Address<textarea required name="address" rows="3" placeholder="Enter your complete address"></textarea></label>
+  <div class="row">
+   <label>Preferred Pickup Date<input required type="date" name="date" id="date"></label>
+   <label>Preferred Time<select name="time"><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label>
+  </div>
+  <label>Upload Footwear / Bag Photos <span class="muted">(optional)</span><input type="file" name="photos" accept="image/*" multiple></label>
+  <label>Notes<textarea name="notes" rows="3" placeholder="Tell us what needs to be repaired..."></textarea></label>
+  <div class="payment-note"><b>💳 Prepaid Service Booking</b><span>Payment is required to confirm your booking. Final amount may depend on inspection.</span></div>
+  <button class="btn primary full" type="submit">Continue to Prepaid Payment</button>
+  <p class="fine">By submitting, you agree to be contacted by Rudhra Bags & Footwears about this service request.</p>
+ </form>
+</section>
+
+<section class="location">
+ <div><span class="eyebrow">VISIT / SERVICE AREA</span><h2>Rudhra Bags & Footwears</h2><p>Near Railway Gate, RTC Complex<br>Tekkali, Srikakulam District<br>Andhra Pradesh</p></div>
+ <div class="contact-card"><span>Need help?</span><a href="tel:9059087311">9059087311</a><a href="https://wa.me/919059087311?text=Hi%20Rudhra%20Bags%20%26%20Footwears%2C%20I%20want%20to%20book%20a%20service." target="_blank">WhatsApp us</a></div>
+</section>
+</main>
+<footer><div>© 2026 Rudhra Bags & Footwears</div><div>Footwear Repair • Bag Repair • Remodeling • Pickup & Delivery</div></footer>
+
+<div id="modal" class="modal"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div class="success">✓</div><h2>Booking Request Saved</h2><p id="modalText"></p><p class="muted">For prepaid confirmation, connect the Razorpay keys in the server configuration included with this project.</p><a id="wa" class="btn primary full" target="_blank">Send Booking on WhatsApp</a></div></div>
+<script src="app.js"></script>
+</body>
+</html>
