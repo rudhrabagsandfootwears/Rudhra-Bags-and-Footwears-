@@ -9,9 +9,9 @@ form.addEventListener("submit", async e=>{
  const data=new FormData(form);
  const bookingId="RBF-"+Date.now().toString().slice(-8);
  const name=data.get("name"), phone=data.get("phone"), service=data.get("service");
- // Production: POST this FormData to /api/bookings and start Razorpay checkout after the server creates the order.
+ // No online payment is required. The booking is sent to WhatsApp for confirmation.
  const msg=`Hi Rudhra Bags & Footwears,%0A%0ABooking ID: ${bookingId}%0AName: ${name}%0AMobile: ${phone}%0AService: ${service}%0APickup/Delivery: ${data.get("mode")}%0AAddress: ${data.get("address")}%0ADate: ${data.get("date")}%0ATime: ${data.get("time")}%0ANotes: ${data.get("notes")||"—"}`;
  wa.href="https://wa.me/919059087311?text="+msg;
- modalText.textContent=`Your request ${bookingId} has been prepared. Please send the booking details on WhatsApp. Prepaid payment is the confirmation step in the production checkout.`;
+ modalText.textContent=`Your request ${bookingId} is ready. Please send the booking details on WhatsApp to confirm your service request.`;
  modal.style.display="flex";
 });
