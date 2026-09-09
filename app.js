@@ -10,8 +10,19 @@ form.addEventListener("submit", async e=>{
  const bookingId="RBF-"+Date.now().toString().slice(-8);
  const name=data.get("name"), phone=data.get("phone"), service=data.get("service");
  // No online payment is required. The booking is sent to WhatsApp for confirmation.
- const msg=`Hi Rudhra Bags & Footwears,%0A%0ABooking ID: ${bookingId}%0AName: ${name}%0AMobile: ${phone}%0AService: ${service}%0APickup/Delivery: ${data.get("mode")}%0AAddress: ${data.get("address")}%0ADate: ${data.get("date")}%0ATime: ${data.get("time")}%0ANotes: ${data.get("notes")||"—"}`;
- wa.href="https://wa.me/919059087311?text="+msg;
+ const msg = `Hi Rudhra Bags & Footwears,
+
+Booking ID: ${bookingId}
+Name: ${name}
+Mobile: ${phone}
+Service: ${service}
+Pickup/Delivery: ${data.get("mode")}
+Address: ${data.get("address")}
+Date: ${data.get("date")}
+Time: ${data.get("time")}
+Notes: ${data.get("notes")||"—"}`;
+ // Encode the complete message so spaces, &, line breaks and user-entered text are preserved.
+ wa.href="https://wa.me/919059087311?text="+encodeURIComponent(msg);
  modalText.textContent=`Your request ${bookingId} is ready. Please send the booking details on WhatsApp to confirm your service request.`;
  modal.style.display="flex";
 });
