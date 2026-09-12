@@ -9,6 +9,8 @@ const bcrypt=require("bcryptjs");
 const session=require("express-session");
 
 const app=express();
+// Render runs behind a reverse proxy; trust it so secure session cookies work.
+app.set("trust proxy", 1);
 const PORT=process.env.PORT||3000;
 const ROOT=__dirname;
 const UPLOADS=path.join(ROOT,"uploads");
@@ -110,7 +112,10 @@ app.post("/api/admin/login",(req,res)=>{
  db.get("SELECT * FROM admins WHERE username=?",[username],(e,row)=>{
    if(e||!row||!bcrypt.compareSync(password||"",row.password_hash)) return res.status(401).json({error:"Invalid username or password"});
    req.session.adminId=row.id; req.session.username=row.username;
-   res.json({ok:true,username:row.username});
+   req.session.save(err=>{
+     if(err)return res.status(500).json({error:"Could not create admin session"});
+     res.json({ok:true,username:row.username});
+   });
  });
 });
 app.post("/api/admin/logout",auth,(req,res)=>req.session.destroy(()=>res.json({ok:true})));
