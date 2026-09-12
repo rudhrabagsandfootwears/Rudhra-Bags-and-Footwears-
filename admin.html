@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rudhra Admin Dashboard</title><link rel="stylesheet" href="admin.css"></head>
+<body>
+<div id="loginView" class="login-wrap"><div class="login-card"><div class="logo">R</div><p class="eyebrow">RUDHRA BAGS & FOOTWEARS</p><h1>Admin Login</h1><p class="muted">Private order management dashboard.</p><form id="loginForm"><label>Username<input id="username" required autocomplete="username"></label><label>Password<input id="password" required type="password" autocomplete="current-password"></label><button class="btn primary">Sign in</button><p id="loginError" class="error"></p></form></div></div>
+<div id="appView" class="hidden"><header><div><b>Rudhra</b><span>Bags & Footwears · Admin</span></div><button id="logout" class="btn ghost">Logout</button></header>
+<main>
+ <div class="head"><div><p class="eyebrow">ADMIN CONTROL CENTER</p><h1>Orders & Updates</h1><p class="muted">Check bookings, update order status and publish special announcements to the website.</p></div><button class="btn ghost" onclick="loadAll()">↻ Refresh</button></div>
+ <div class="tabs"><button class="tab active" data-tab="orders">📦 Orders</button><button class="tab" data-tab="updates">📢 Special Updates</button></div>
+ <section id="ordersTab">
+  <div class="stats"><div><small>Total</small><strong id="total">0</strong></div><div><small>New</small><strong id="newCount">0</strong></div><div><small>Processing</small><strong id="processing">0</strong></div><div><small>Completed</small><strong id="completed">0</strong></div><div><small>Cancelled</small><strong id="cancelled">0</strong></div></div>
+  <div class="toolbar"><input id="search" placeholder="Search name, phone, booking ID..."><select id="filter"><option>ALL</option><option>NEW</option><option>PROCESSING</option><option>COMPLETED</option><option>CANCELLED</option></select></div>
+  <div class="table-wrap"><table><thead><tr><th>Booking</th><th>Customer</th><th>Service</th><th>Date</th><th>Status</th><th>Created</th><th></th></tr></thead><tbody id="rows"></tbody></table><div id="empty" class="empty hidden">No bookings found.</div></div>
+ </section>
+ <section id="updatesTab" class="hidden">
+  <div class="update-admin-grid">
+   <div class="post-card"><p class="eyebrow">PUBLISH ON WEBSITE</p><h2>New Special Update</h2><p class="muted">Post offers, holidays, service notices or important announcements. Active posts appear in the website's Special Updates section.</p>
+    <form id="updateForm"><label>Type<select id="updateType"><option>GENERAL</option><option>OFFER</option><option>NOTICE</option><option>SERVICE</option><option>HOLIDAY</option></select></label><label>Title<input id="updateTitle" required placeholder="Example: Sunday Pickup Available"></label><label>Message<textarea id="updateMessage" required rows="6" placeholder="Write the update customers should see..."></textarea></label><button class="btn primary full" type="submit">📢 Publish Update</button><p id="updateMsg" class="success-msg"></p></form>
+   </div>
+   <div><div class="list-head"><div><p class="eyebrow">MANAGE POSTS</p><h2>Published & Draft Updates</h2></div><button class="btn ghost" onclick="loadUpdates()">↻</button></div><div id="updateList" class="update-list"></div></div>
+  </div>
+ </section>
+</main></div>
+<div id="detail" class="drawer hidden"><div class="drawer-card"><button class="close" onclick="closeDetail()">×</button><div id="detailBody"></div></div></div>
+<script src="admin.js"></script></body></html>

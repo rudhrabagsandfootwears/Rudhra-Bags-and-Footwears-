@@ -21,7 +21,7 @@
     <p>All kinds of footwear repair, restoration and remodeling — with convenient service booking and pickup & delivery.</p>
     <div class="hero-actions">
       <a href="#booking" class="btn primary">Book a Service</a>
-      <a href="tel:9059087311" class="btn ghost">Call Now</a>
+      <a href="#tracking" class="btn ghost">Track Order</a>
     </div>
     <div class="trust"><span>✓ Easy booking</span><span>✓ Pickup & delivery</span><span>✓ Quality repair</span></div>
   </div>
@@ -74,6 +74,23 @@
   <button class="btn primary full" type="submit">Submit Booking & WhatsApp</button>
   <p class="fine">By submitting, you agree to be contacted by Rudhra Bags & Footwears about this service request.</p>
  </form>
+</section>
+
+<section id="tracking" class="section tracking-section">
+ <div class="section-head"><span class="eyebrow">ORDER TRACKING</span><h2>Track your service.</h2><p>Enter the Booking ID you received after booking and the same mobile number used in your request.</p></div>
+ <div class="tracking-card">
+  <form id="trackForm" class="track-form">
+   <label>Booking ID<input id="trackBookingId" required placeholder="Example: RBF-1234567890"></label>
+   <label>Mobile Number<input id="trackPhone" required inputmode="numeric" pattern="[0-9]{10}" placeholder="10-digit mobile"></label>
+   <button class="btn primary" type="submit">Check Order Status</button>
+  </form>
+  <div id="trackResult" class="track-result hidden"></div>
+ </div>
+</section>
+
+<section id="updates" class="section updates-section">
+ <div class="section-head"><span class="eyebrow">RUDHRA UPDATES</span><h2>Latest special updates.</h2><p>Important offers, service notices and announcements from Rudhra Bags & Footwears.</p></div>
+ <div id="publicUpdates" class="updates-grid"><div class="muted">Loading updates...</div></div>
 </section>
 
 <section class="location">
